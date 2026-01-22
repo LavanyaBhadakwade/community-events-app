@@ -1,0 +1,133 @@
+/* src/styles/EventList.module.css */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.emptyIcon {
+  font-size: 3.75rem;
+  margin-bottom: 1rem;
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.resultsInfo {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resultsText {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.resultsText span {
+  font-weight: 600;
+}
+
+.pageInfo {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .eventsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .eventsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.5rem;
+  background: white;
+  transition: all var(--transition-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.paginationButton:hover:not(:disabled) {
+  background: var(--gray-50);
+  box-shadow: var(--shadow-sm);
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pageNumber {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-300);
+  background: white;
+  transition: all var(--transition-base);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+.pageNumber:hover {
+  background: var(--gray-50);
+}
+
+.pageNumberActive {
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.ellipsis {
+  padding: 0 0.75rem;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+}

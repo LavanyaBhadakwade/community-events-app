@@ -1,0 +1,241 @@
+/* src/styles/SearchAndFilters.module.css */
+
+.container {
+  background: linear-gradient(90deg, #faf5ff, #fce7f3, #fee2e2);
+  border-bottom: 1px solid #e9d5ff;
+  position: sticky;
+  top: 73px;
+  z-index: 40;
+  box-shadow: var(--shadow-sm);
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+.searchRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.searchWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--gray-400);
+  transition: color var(--transition-base);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.75rem;
+  outline: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  background: white;
+}
+
+.searchInput:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.1);
+}
+
+.searchInput:focus ~ .searchIcon {
+  color: var(--primary-purple);
+}
+
+.filterButton {
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.75rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  background: white;
+  color: var(--gray-700);
+}
+
+.filterButton:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-purple);
+}
+
+.filterButtonActive {
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink));
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+
+.filterButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.filterButton span {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .filterButton span {
+    display: inline;
+  }
+}
+
+.clearButton {
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.75rem;
+  background: white;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.clearButton:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  box-shadow: var(--shadow-md);
+}
+
+.clearButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--gray-700);
+  transition: color var(--transition-base);
+}
+
+.clearButton:hover svg {
+  color: #dc2626;
+}
+
+/* Advanced Filters */
+.filtersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@media (min-width: 640px) {
+  .filtersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filterCard {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filterCardPurple {
+  border: 2px solid #e9d5ff;
+}
+
+.filterCardPink {
+  border: 2px solid #fce7f3;
+}
+
+.filterCardRed {
+  border: 2px solid #fee2e2;
+}
+
+.filterLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.filterLabelPurple {
+  color: #7e22ce;
+}
+
+.filterLabelPink {
+  color: #be185d;
+}
+
+.filterLabelRed {
+  color: #991b1b;
+}
+
+.filterSelect,
+.filterInput {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, var(--gray-50), white);
+  transition: all var(--transition-base);
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.1);
+}
+
+/* Quick Filter Chips */
+.chipsWrapper {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: none;
+}
+
+.chipsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  border: 2px solid var(--gray-200);
+  background: white;
+  color: var(--gray-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.chip:hover {
+  background: linear-gradient(90deg, #faf5ff, #fce7f3);
+  border-color: var(--primary-purple);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.chipActive {
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink), var(--primary-red));
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.05);
+}

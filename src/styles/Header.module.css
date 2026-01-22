@@ -1,0 +1,207 @@
+/* src/styles/Header.module.css */
+
+.header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--gray-200);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoIconWrapper {
+  position: relative;
+}
+
+.logoIcon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink), var(--primary-red));
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.logo:hover .logoIcon {
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.05);
+}
+
+.logoIcon svg {
+  color: white;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.sparkle {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fbbf24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.sparkle svg {
+  width: 0.625rem;
+  height: 0.625rem;
+  color: #78350f;
+}
+
+.logoText h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink), var(--primary-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.logoText p {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink), var(--primary-red));
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.createButton:hover {
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.05);
+}
+
+.createButton svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--transition-base);
+}
+
+.createButton:hover svg {
+  transform: rotate(90deg);
+}
+
+.createButton .textShort {
+  display: inline;
+}
+
+.createButton .textLong {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .createButton .textShort {
+    display: none;
+  }
+  .createButton .textLong {
+    display: inline;
+  }
+}
+
+/* My Events Button */
+.myEventsWrapper {
+  position: relative;
+}
+
+.myEventsButton {
+  padding: 0.625rem;
+  background: transparent;
+  border-radius: 0.75rem;
+  transition: all var(--transition-base);
+}
+
+.myEventsButton:hover {
+  background: linear-gradient(135deg, #faf5ff, #fce7f3);
+}
+
+.myEventsButton svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--gray-700);
+  transition: color var(--transition-base);
+}
+
+.myEventsButton:hover svg {
+  color: var(--primary-purple);
+}
+
+.badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  min-width: 1.375rem;
+  height: 1.375rem;
+  padding: 0 0.25rem;
+  background: linear-gradient(135deg, var(--primary-red), var(--primary-pink));
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Gradient Line */
+.gradientLine {
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-pink), var(--primary-red));
+}

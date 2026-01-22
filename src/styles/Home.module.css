@@ -1,0 +1,6 @@
+/* src/styles/Home.module.css */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+}
